@@ -1,0 +1,16 @@
+{
+  "name": "Velixir: The Vocabulary Potion",
+  "short_name": "Velixir",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#F5F3EE",
+  "theme_color": "#FBF0DC",
+  "description": "GRE vocabulary trainer: 1,578 words, 53 groups, SE pairs, word buckets and more.",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
