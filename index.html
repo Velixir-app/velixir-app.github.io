@@ -58,10 +58,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .splash-btn:active{opacity:.7}
 
 .tabs-scroll{margin-bottom:16px}
-.tabs{display:flex;border:2px solid var(--gb2);border-radius:var(--rl);overflow:hidden;background:var(--sf)}
-.tab{flex:1;padding:9px 3px;font-size:10.5px;font-weight:800;border:none;background:transparent;color:var(--gt);cursor:pointer;border-right:2px solid var(--gb2);text-transform:uppercase;letter-spacing:0.01em;line-height:1.25;touch-action:manipulation}
+.tabs{display:grid;grid-template-columns:repeat(7,1fr);border:2px solid var(--gb2);border-radius:var(--rl);overflow:hidden;background:var(--sf)}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;padding:8px 1px 7px;border:none;background:transparent;color:var(--gt);cursor:pointer;border-right:2px solid var(--gb2);touch-action:manipulation}
+.tab svg{width:21px;height:21px;flex:none;display:block}
+.tab .tlbl{display:block;font-size:11px;font-weight:700;line-height:1;white-space:nowrap;max-width:100%;overflow:hidden}
 .tab:last-child{border-right:none}
 .tab.active{background:var(--gl);color:var(--gd)}
+.tab.active .tlbl{font-weight:800}
 .tab:active{opacity:0.65}
 .panel{display:none}.panel.active{display:block}
 
@@ -318,13 +321,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <div class="tabs-scroll">
 <div class="tabs">
-  <button class="tab active" onclick="showTab('study')">Study</button>
-  <button class="tab" onclick="showTab('flash')">Flashcards</button>
-  <button class="tab" onclick="showTab('search')">Search</button>
-  <button class="tab" onclick="showTab('mywords')">My Words</button>
-  <button class="tab" onclick="showTab('pairs')">SE Pairs</button>
-  <button class="tab" onclick="showTab('dd')">Double-Duty</button>
-  <button class="tab" onclick="showTab('buckets')">Word Buckets</button>
+  <button class="tab active" onclick="showTab('study')"><svg viewBox="0 0 24 24" fill="none" stroke="#5C3A05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10.3 5.1 8 4.6 5 4.6v13c3 0 5.3.5 7 2 1.7-1.5 4-2 7-2v-13c-3 0-5.3.5-7 2z"/><path d="M12 6.6v13"/><path d="M7.6 8.8c1.1.1 2.1.4 2.9.9" stroke="#D4891C"/><path d="M16.4 8.8c-1.1.1-2.1.4-2.9.9" stroke="#F5C46A"/></svg><span class="tlbl">Study</span></button>
+  <button class="tab" onclick="showTab('flash')"><svg viewBox="0 0 24 24" fill="none" stroke="#5C3A05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3.8" width="10.5" height="13.5" rx="2" fill="#D4891C"/><rect x="4.5" y="6.7" width="10.5" height="13.5" rx="2" fill="#FBF0DC"/><path d="M7.3 10h5" stroke="#F5C46A"/></svg><span class="tlbl">Cards</span></button>
+  <button class="tab" onclick="showTab('search')"><svg viewBox="0 0 24 24" fill="none" stroke="#5C3A05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.7"/><path d="M14.8 14.8l4.6 4.6" stroke="#D4891C"/><path d="M7.7 9.2a3.4 3.4 0 012.5-1.9" stroke="#F5C46A"/></svg><span class="tlbl">Search</span></button>
+  <button class="tab" onclick="showTab('mywords')"><svg viewBox="0 0 24 24" fill="none" stroke="#5C3A05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4.2h10v15.6l-5-3.6-5 3.6z"/><circle cx="12" cy="9.4" r="1.7" fill="#D4891C" stroke="none"/></svg><span class="tlbl">Words</span></button>
+  <button class="tab" onclick="showTab('pairs')"><svg viewBox="0 0 24 24" fill="none" stroke="#5C3A05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.3" cy="12" r="5.2"/><circle cx="14.7" cy="12" r="5.2" stroke="#D4891C"/></svg><span class="tlbl">Pairs</span></button>
+  <button class="tab" onclick="showTab('dd')"><svg viewBox="0 0 24 24" fill="none" stroke="#5C3A05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.5a7.5 7.5 0 000 15z" fill="#D4891C" stroke="none"/><circle cx="12" cy="12" r="7.5"/><path d="M12 4.5v15"/></svg><span class="tlbl" id="ddTabLbl">Duo-Duty</span></button>
+  <button class="tab" onclick="showTab('buckets')"><svg viewBox="0 0 24 24" fill="none" stroke="#5C3A05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.6 9l1.5 9.7a1.6 1.6 0 001.6 1.3h6.6a1.6 1.6 0 001.6-1.3L18.4 9"/><path d="M5.3 8.9c0 1 3 1.9 6.7 1.9s6.7-.9 6.7-1.9" stroke="#D4891C"/><circle cx="9.6" cy="4.6" r=".9" fill="#F5C46A" stroke="none"/><circle cx="13.1" cy="3.4" r="1.1" fill="#F5C46A" stroke="none"/><circle cx="15.7" cy="5.4" r=".8" fill="#F5C46A" stroke="none"/></svg><span class="tlbl">Buckets</span></button>
 </div>
 </div>
 
@@ -332,6 +335,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <div id="tab-study" class="panel active">
 
   <div id="cfView">
+    <div class="tip"><strong>Study</strong> — swipe through the word groups, then open one to learn its words and quiz yourself.</div>
     <div class="railWrap">
       <div class="rail" id="rail">
         <div class="railSpacer"></div>
@@ -396,6 +400,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <!-- SEARCH TAB -->
 <div id="tab-search" class="panel">
+  <div class="tip"><strong>Search</strong> — look up any word in the collection by the word itself, its definition, or a synonym.</div>
   <div class="search-box">
     <span class="sico">🔍</span>
     <input type="text" id="searchInput" placeholder="Search word, definition, or synonym…" oninput="doSearch()">
@@ -519,7 +524,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <!-- DOUBLE-DUTY TAB -->
 <div id="tab-dd" class="panel">
-  <div class="tip"><strong>Double-duty words</strong> — everyday words with a second, test meaning the GRE loves. The familiar sense is the trap; the GRE sense earns the point. Swipe sideways.</div>
+  <div class="tip"><strong>Duo-duty words</strong> — everyday words with a second, test meaning the GRE loves. The familiar sense is the trap; the GRE sense earns the point. Swipe sideways.</div>
   <div class="rail-dots" id="ddDots">1 / __</div>
   <div class="hrail" id="ddRail"></div>
 </div>
@@ -730,11 +735,19 @@ function closeInstallModal(id){
   document.getElementById(id).classList.remove('show');
 }
 
+function fitDuoDutyLabel(){
+  var el = document.getElementById('ddTabLbl');
+  if(!el) return;
+  el.textContent = 'Duo-Duty';
+  if(el.scrollWidth > el.parentNode.clientWidth - 2){ el.textContent = 'DuoDuty'; }
+}
 function init(){
   loadProgress();
   showSplash();
   setupManifest();
   initInstallButton();
+  fitDuoDutyLabel();
+  window.addEventListener('resize', fitDuoDutyLabel);
   document.getElementById('hdrSub').textContent =
     VF_DATA.meta.vocab_words_total.toLocaleString()+' words · '+VF_DATA.meta.vocab_groups_total+' groups · '+VF_DATA.meta.se_sections_total+' SE pairs';
   renderCoverflow();
@@ -1590,7 +1603,7 @@ function buildDDRail(){
   var html = '<div class="hedge"></div>';
   DD_DATA.forEach(function(row,i){
     html += '<div class="hslide"><div class="ddc">'+
-      '<div class="idx">Double-duty · '+(i+1)+'</div>'+
+      '<div class="idx">Duo-duty · '+(i+1)+'</div>'+
       '<div class="word">'+esc(row[0])+'</div>'+
       '<div class="block"><div class="lab fam">Familiar</div><div class="txt fam">'+esc(row[1])+'</div></div>'+
       '<div class="divider"></div>'+
@@ -1662,14 +1675,12 @@ function railDots(rail, dotId, total){
 buildDDRail(); buildBucketRail();
 init();
 
-
-</script>
-<script>
 if('serviceWorker' in navigator){
   window.addEventListener('load', function(){
-    navigator.serviceWorker.register('./sw.js').catch(function(e){ console.warn('SW registration failed', e); });
+    navigator.serviceWorker.register('sw.js').catch(function(){});
   });
 }
+
 </script>
 </body>
 </html>
