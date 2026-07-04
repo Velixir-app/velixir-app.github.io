@@ -1,6 +1,6 @@
 /* Velixir service worker.
    RULE: bump CACHE_VERSION on EVERY index.html deploy, or students keep the old cached app. */
-var CACHE_VERSION = 'velixir-1';
+var CACHE_VERSION = 'velixir-2';
 var PRECACHE = [
   './',
   'index.html',
